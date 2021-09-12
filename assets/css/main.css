@@ -1,0 +1,315 @@
+/*Reset des éléments*/
+*,
+*:before,
+*:after {
+    box-sizing: inherit;
+}
+
+html {
+    height: 100%;
+    box-sizing: border-box;
+}
+body {
+    position: relative;
+    margin: 0;
+    padding-bottom: 6rem;
+    min-height: 100%;
+    font-family: "Helvetica Neue", Arial, sans-serif;
+}
+
+.header-right{
+    display: inline-block;
+    overflow: hidden;
+    padding: 10px;
+    position: absolute;
+    top: 10px;
+    right: 10px;
+}
+.header-right a{
+    color: black;
+    text-align: center;
+    padding: 12px;
+    text-decoration: none;
+    font-size: 18px;
+    line-height: 25px;
+    border-radius: 4px;
+}
+.header-right a:hover {
+    background-color: #ddd;
+    color: black;
+}
+
+.header-right a.header-active {
+    background-color: dodgerblue;
+    color: white;
+}
+
+.chip {
+    display: inline-block;
+    padding: 0 25px;
+    height: 50px;
+    font-size: 16px;
+    line-height: 50px;
+    border-radius: 25px;
+    background-color: #f1f1f1;
+    color: #1abc9c;
+    position: absolute;
+    top: 10px;
+    left: 10px;
+}
+
+.chip img {
+    float: left;
+    margin: 0 10px 0 -25px;
+    height: 50px;
+    width: 50px;
+    border-radius: 50%;
+}
+
+
+/* Header/logo Title */
+.header-img {
+    padding: 80px;
+    text-align: center;
+    background: rgba(134, 134, 134, 0.15);
+    color: white;
+    position: relative;
+}
+
+
+/* Increase the font size of the heading */
+.header-img h1 {
+    font-size: 40px;
+}
+
+.description{
+    background-color: #aaa;
+    border-radius: 5px;
+    margin:  80px auto;
+    padding-top: 64px;
+    width: 70%;
+}
+.description .header{
+    font-size: 40px;
+}
+.description a{
+    text-decoration: none;
+}
+
+nav {
+    width: 100%;
+    background-color: #424558; /*couleur de fond du menu*/
+}
+
+nav > ul {
+    margin: 0px;
+    padding: 0px;
+}
+
+nav li {
+    list-style-type: none; /*Enlève les puces*/
+}
+
+nav > ul > li {
+    float: left; /*faire flotter à gauche*/
+    position: relative;
+}
+
+nav > ul::after {
+    /*Pour éviter que ul se cache*/
+    content: "";
+    display: table;
+    clear: both;
+}
+
+.submenu {
+    display: none; /*cacher les sous menu*/
+}
+
+nav input[type=checkbox] {
+    display: none; /*enlever le checkbox*/
+}
+
+nav label {
+    display: none; /*enlève le label Menu*/
+}
+
+nav a {
+    display: inline-block;
+    text-decoration: none; /*enlever souslignement liens*/
+}
+
+nav > ul > li > a {
+    padding: 20px 30px;
+    color: #FFF;
+}
+
+nav > ul > li:hover a {
+    /*empêche l'allongement du menu lors du survol*/
+    padding: 15px 30px 20px 30px;
+}
+
+nav li:hover .submenu {
+    /*applique style lors du survolement*/
+    display: inline-block;
+    position: absolute;
+    top: 100%;
+    left: 0px;
+    padding: 0px;
+    z-index: 1000;
+}
+
+.submenu li a {
+    padding: 15px 30px;
+    font-size: 13px;
+    color: #222538;
+    width: 270px;
+}
+
+.submenu li {
+    border-bottom: 1px solid #CCC;
+}
+
+/*Faire flotter à droite*/
+.menu-register,
+.menu-login,
+.menu-logout,
+.menu-profile{
+    float: right;
+}
+
+/*Applique style lors du survolement*/
+.menu-html:hover,
+.footer a.html:hover{
+    border-top: 5px solid #e44d26;
+    background-color: rgba(228, 77, 38, 0.15);
+}
+
+.menu-css:hover,
+.footer a.css:hover{
+    border-top: 5px solid #0070bb;
+    background-color: rgba(000, 112, 192, 0.15);
+}
+
+.menu-js:hover,
+.footer a.js:hover{
+    border-top: 5px solid #f1dc4f;
+    background-color: rgba(241, 211, 79, 0.15);
+}
+
+.menu-php:hover,
+.footer a.php:hover {
+    border-top: 5px solid green;
+    background-color: rgba(10, 215, 70, 0.15);
+}
+
+.menu-register:hover,
+.menu-login:hover,
+.menu-acceuil:hover,
+.menu-logout:hover,
+.menu-profile:hover{
+    border-top: 5px solid #BBB;
+    background-color: rgba(220, 220, 220, 0.15);
+}
+
+
+/*applique couleur de fond sur sous-menu*/
+.menu-html .submenu {
+    background-color: rgb(230, 100, 40);
+}
+
+.menu-css .submenu {
+    background-color: rgb(000, 160, 240);
+}
+
+.menu-js .submenu {
+    background-color: rgb(250, 215, 100);
+}
+
+.menu-php .submenu {
+    background-color: rgb(20, 215, 100);
+}
+
+.submenu li:hover a {
+    color: #EEE;
+    font-weight: bold;
+}
+
+/*applique styles lors du survolement*/
+.menu-html .submenu li:hover {
+    background-color: rgb(210, 77, 60);
+}
+
+.menu-css .submenu li:hover {
+    background-color: rgb(000, 115, 200);
+}
+
+.menu-js .submenu li:hover {
+    background-color: rgb(200, 165, 75);
+}
+
+.menu-php .submenu li:hover {
+    background-color: rgb(130, 200, 75);
+}
+
+nav input[type=checkbox]:checked ~ ul {
+    display: block;
+}
+.active{
+    background-color: rgba(220, 220, 220, 0.15);
+}
+
+.menu-acceuil{
+    background-color: #ff4e6b;
+}
+
+.footer {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    padding: 6px;
+    margin: 0px;
+    width: 100%;
+    background: rgba(190, 190, 190, 0.78);
+}
+
+.footer a{
+    text-decoration: none;
+}
+
+.footer .copyright {
+    text-align: center;
+
+}
+
+.fa-heart, .fa-smile {
+    color: #fb866a;
+}
+
+@media screen and (max-width: 780px) {
+    .menu-mobile {
+        display: block;
+        color: #FFF;
+        background-color: rgba(29, 197, 151, 0.97);
+        text-align: center;
+        padding: 12px 0px;
+    }
+
+    nav ul {
+        display: none;
+    }
+
+    nav ul li, nav ul li a {
+        width: 100%;
+        text-align: center;
+    }
+
+    nav ul li a, nav ul li:hover a {
+        padding: 10px 0px;
+    }
+
+    nav li:hover .submenu {
+        display: block;
+        position: static;
+    }
+}

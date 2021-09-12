@@ -1,0 +1,52 @@
+-- Connexion a Mysql -------------------
+mysql -uroot 
+-- -------------------------------------
+-- Pour voir les bd --------------------
+show databases;
+----------------------------------------
+
+-- Pour utiliser une bd ----------------
+use exam;
+-- -------------------------------------
+
+-- Pour voir les tables d'une bd--------
+show tables;
+-- -------------------------------------
+-- Pour créer une table ----------------
+CREATE TABLE users(
+	id int PRIMARY KEY AUTO_INCREMENT,
+	name VARCHAR(255),
+	pseudo VARCHAR(255) UNIQUE,
+	email VARCHAR(255) UNIQUE,
+	password VARCHAR(255)
+);
+---------------------------------------
+
+-- Pour supprimer une table------------
+DROP TABLE IF EXISTS billets;
+---------------------------------------
+
+-- Pour voir la structure d'une table-
+describe users;
+---------------------------------------
+
+----Pour modifier une table-----------
+ALTER TABLE users
+ADD COLUMN city VARCHAR(255),
+ADD COLUMN country VARCHAR(255),
+ADD COLUMN sex ENUM('H','F'),
+ADD COLUMN twitter VARCHAR(255),
+ADD COLUMN available_for_hiring ENUM('0','1') DEFAULT '0',
+ADD COLUMN bio TEXT;
+------------------------------------
+
+---Pour modifier un champ-------
+ALTER TABLE users
+CHANGE sexe sex ENUM('H','F');
+-----------------------------------
+
+
+
+
+
+
